@@ -80,9 +80,13 @@ jobs:
           default_author: github_actions
           add: resource
 
+      # zip files
+      - name: Zip Habbo Files
+        run: zip -r habbo-files.zip resource
+
       # upload artifact
       - name: Upload Habbo Files Artifact
         uses: actions/upload-artifact@v3
         with:
           name: habbo-files
-          path: resource
+          path: habbo-files.zip
